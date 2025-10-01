@@ -1,6 +1,6 @@
 - 👋 Hi, I’m MohamadReza Dalili, @mamadalili
 - 👀 I’m interested in Technology and Programming
-- 🌱 I’m currently learning Python and AI engineering
+- 🌱 I’m currently learning coding and AI engineering
 - 💞️ I’m looking to collaborate on GitHub solution for programming and learning new things
 
 <!---
