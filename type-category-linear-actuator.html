@@ -107,6 +107,16 @@
     overflow:hidden;
     position:relative;
   }
+  .product-main-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    position:relative;
+    z-index:3;
+  }
+  .product-main-img img.is-broken{
+    display:none;
+  }
 
   .product-gallery{
     display:grid;
@@ -124,6 +134,14 @@
     overflow:hidden;
     transition:all 0.2s;
     position:relative;
+  }
+  .gallery-thumb img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+  .gallery-thumb img.is-broken{
+    display:none;
   }
 
   .product-right{
@@ -215,12 +233,14 @@
 
       <article class="product-card">
         <div class="product-left">
-          <div class="product-main-img"></div>
+          <div class="product-main-img">
+            <img src="/images/products/linear-actuator-1.jpg" alt="Linear Actuator Series One" onerror="this.classList.add('is-broken')" />
+          </div>
           <div class="product-gallery">
-            <div class="gallery-thumb"></div>
-            <div class="gallery-thumb"></div>
-            <div class="gallery-thumb"></div>
-            <div class="gallery-thumb"></div>
+            <div class="gallery-thumb"><img src="/images/products/linear-actuator-1-g1.jpg" alt="Gallery 1" onerror="this.classList.add('is-broken')" /></div>
+            <div class="gallery-thumb"><img src="/images/products/linear-actuator-1-g2.jpg" alt="Gallery 2" onerror="this.classList.add('is-broken')" /></div>
+            <div class="gallery-thumb"><img src="/images/products/linear-actuator-1-g3.jpg" alt="Gallery 3" onerror="this.classList.add('is-broken')" /></div>
+            <div class="gallery-thumb"><img src="/images/products/linear-actuator-1-g4.jpg" alt="Gallery 4" onerror="this.classList.add('is-broken')" /></div>
           </div>
         </div>
         <div class="product-right">
@@ -228,18 +248,20 @@
           <p class="product-description">
             High-performance linear actuator engineered for precision, durability, and dependable operation in mission-critical environments.
           </p>
-          <a href="#" class="btn-pdf">Linear Actuator Series One Brochure</a>
+          <a href="/pdfs/linear-actuator-1.pdf" class="btn-pdf">Linear Actuator Series One Brochure</a>
         </div>
       </article>
 
       <article class="product-card">
         <div class="product-left">
-          <div class="product-main-img"></div>
+          <div class="product-main-img">
+            <img src="/images/products/linear-actuator-2.jpg" alt="Linear Actuator Series Two" onerror="this.classList.add('is-broken')" />
+          </div>
           <div class="product-gallery">
-            <div class="gallery-thumb"></div>
-            <div class="gallery-thumb"></div>
-            <div class="gallery-thumb"></div>
-            <div class="gallery-thumb"></div>
+            <div class="gallery-thumb"><img src="/images/products/linear-actuator-2-g1.jpg" alt="Gallery 1" onerror="this.classList.add('is-broken')" /></div>
+            <div class="gallery-thumb"><img src="/images/products/linear-actuator-2-g2.jpg" alt="Gallery 2" onerror="this.classList.add('is-broken')" /></div>
+            <div class="gallery-thumb"><img src="/images/products/linear-actuator-2-g3.jpg" alt="Gallery 3" onerror="this.classList.add('is-broken')" /></div>
+            <div class="gallery-thumb"><img src="/images/products/linear-actuator-2-g4.jpg" alt="Gallery 4" onerror="this.classList.add('is-broken')" /></div>
           </div>
         </div>
         <div class="product-right">
@@ -247,18 +269,20 @@
           <p class="product-description">
             Robust linear actuator lineup featuring optimized control characteristics and reliable performance in harsh conditions.
           </p>
-          <a href="#" class="btn-pdf">Linear Actuator Series Two Brochure</a>
+          <a href="/pdfs/linear-actuator-2.pdf" class="btn-pdf">Linear Actuator Series Two Brochure</a>
         </div>
       </article>
 
       <article class="product-card">
         <div class="product-left">
-          <div class="product-main-img"></div>
+          <div class="product-main-img">
+            <img src="/images/products/linear-actuator-3.jpg" alt="Linear Actuator Series Three" onerror="this.classList.add('is-broken')" />
+          </div>
           <div class="product-gallery">
-            <div class="gallery-thumb"></div>
-            <div class="gallery-thumb"></div>
-            <div class="gallery-thumb"></div>
-            <div class="gallery-thumb"></div>
+            <div class="gallery-thumb"><img src="/images/products/linear-actuator-3-g1.jpg" alt="Gallery 1" onerror="this.classList.add('is-broken')" /></div>
+            <div class="gallery-thumb"><img src="/images/products/linear-actuator-3-g2.jpg" alt="Gallery 2" onerror="this.classList.add('is-broken')" /></div>
+            <div class="gallery-thumb"><img src="/images/products/linear-actuator-3-g3.jpg" alt="Gallery 3" onerror="this.classList.add('is-broken')" /></div>
+            <div class="gallery-thumb"><img src="/images/products/linear-actuator-3-g4.jpg" alt="Gallery 4" onerror="this.classList.add('is-broken')" /></div>
           </div>
         </div>
         <div class="product-right">
@@ -266,7 +290,7 @@
           <p class="product-description">
             Smart linear actuator package with enhanced monitoring capabilities and dependable lifecycle performance.
           </p>
-          <a href="#" class="btn-pdf">Linear Actuator Series Three Brochure</a>
+          <a href="/pdfs/linear-actuator-3.pdf" class="btn-pdf">Linear Actuator Series Three Brochure</a>
         </div>
       </article>
     </div>
