@@ -10,35 +10,14 @@
 
   .page-hero{
     width:100%;
-    height:260px;
+    height:180px;
     position:relative;
     margin-top:48px;
     overflow:hidden;
-  }
-
-  .hero-bg-image{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background-image:url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1200');
-    background-size:cover;
-    background-position:center;
-    z-index:1;
-  }
-
-  .hero-overlay{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
     background:linear-gradient(135deg, rgba(26,95,122,0.85) 0%, rgba(37,150,190,0.75) 50%, rgba(26,122,158,0.85) 100%);
-    z-index:2;
   }
 
-  .hero-particles{position:absolute;top:0;left:0;width:100%;height:100%;z-index:3}
+  .hero-particles{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1}
   .hero-particle{
     position:absolute;
     width:4px;
@@ -59,30 +38,9 @@
     50%{transform:translateY(-40px) scale(1.4);opacity:1}
   }
 
-  .hero-orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:0.3;z-index:4}
-  .hero-orb1{width:350px;height:350px;background:rgba(255,255,255,0.2);top:-120px;right:-120px}
-  .hero-orb2{width:280px;height:280px;background:rgba(255,255,255,0.15);bottom:-90px;left:-90px}
-
-  .hero-content{
-    position:relative;
-    z-index:10;
-    text-align:center;
-    color:white;
-    height:100%;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-  }
-
-  .hero-title-box{
-    background:rgba(255,255,255,0.15);
-    backdrop-filter:blur(10px);
-    border:2px solid rgba(255,255,255,0.3);
-    border-radius:16px;
-    padding:22px 36px;
-    box-shadow:0 8px 32px rgba(0,0,0,0.2);
-  }
+  .hero-orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:0.3;z-index:2}
+  .hero-orb1{width:300px;height:300px;background:rgba(255,255,255,0.2);top:-120px;right:-120px}
+  .hero-orb2{width:240px;height:240px;background:rgba(255,255,255,0.15);bottom:-90px;left:-90px}
 
   .page-main{max-width:1400px;margin:0 auto;padding:24px 20px 40px}
   .page-title{
@@ -139,6 +97,7 @@
 
   .product-main-img{
     flex:1;
+    min-height:240px;
     background:
       linear-gradient(135deg, rgba(37,150,190,0.18), rgba(37,150,190,0.05)),
       repeating-linear-gradient(45deg, rgba(255,255,255,0.35) 0 12px, rgba(255,255,255,0.1) 12px 24px);
@@ -147,26 +106,6 @@
     justify-content:center;
     overflow:hidden;
     position:relative;
-  }
-  .product-main-img::before{
-    content:'📷';
-    position:absolute;
-    font-size:60px;
-    opacity:0.2;
-    z-index:1;
-  }
-  .product-main-img::after{
-    content:'';
-  }
-  .product-main-img img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    position:relative;
-    z-index:3;
-  }
-  .product-main-img img.is-broken{
-    display:none;
   }
 
   .product-gallery{
@@ -183,30 +122,8 @@
     background:linear-gradient(135deg, rgba(37,150,190,0.08), rgba(37,150,190,0.03));
     border-radius:6px;
     overflow:hidden;
-    cursor:pointer;
     transition:all 0.2s;
     position:relative;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-  }
-  .gallery-thumb::before{
-    content:'🖼️';
-    position:absolute;
-    font-size:20px;
-    opacity:0.3;
-  }
-  .gallery-thumb:hover{
-    transform:scale(1.08);
-    box-shadow:0 4px 12px rgba(37,150,190,0.3);
-  }
-  .gallery-thumb img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-  }
-  .gallery-thumb img.is-broken{
-    display:none;
   }
 
   .product-right{
@@ -254,13 +171,12 @@
       width:100%;
     }
     .product-main-img{
-      height:300px;
+      min-height:220px;
     }
   }
 
   @media (max-width:768px){
-    .page-hero{height:210px;margin-top:72px}
-    .hero-title-box{padding:18px 24px}
+    .page-hero{height:150px;margin-top:72px}
     .product-gallery{grid-template-columns:repeat(2, 1fr)}
     .product-right{padding:22px}
     .section-title{font-size:22px}
@@ -275,8 +191,6 @@
 </style>
 
 <section class="page-hero">
-  <div class="hero-bg-image"></div>
-  <div class="hero-overlay"></div>
   <div class="hero-particles">
     <div class="hero-particle"></div>
     <div class="hero-particle"></div>
@@ -287,13 +201,12 @@
   </div>
   <div class="hero-orb hero-orb1"></div>
   <div class="hero-orb hero-orb2"></div>
-  <div class="hero-content"></div>
 </section>
 
 <main class="page-main">
   <h2 class="page-title">BDV</h2>
   <p class="page-desc">
-    Premium bdv solutions designed for demanding industrial environments. Our advanced designs deliver exceptional reliability, precision, and performance across critical applications.
+    Premium bdv products designed for demanding industrial environments. Our advanced designs deliver exceptional reliability, precision, and performance across critical applications.
   </p>
 
   <section class="products-section">
@@ -302,14 +215,12 @@
 
       <article class="product-card">
         <div class="product-left">
-          <div class="product-main-img">
-            <img src="/images/products/bdv-1.jpg" alt="BDV Series One" onerror="this.classList.add('is-broken')" />
-          </div>
+          <div class="product-main-img"></div>
           <div class="product-gallery">
-            <div class="gallery-thumb"><img src="/images/products/bdv-1-g1.jpg" alt="Gallery 1" onerror="this.classList.add('is-broken')" /></div>
-            <div class="gallery-thumb"><img src="/images/products/bdv-1-g2.jpg" alt="Gallery 2" onerror="this.classList.add('is-broken')" /></div>
-            <div class="gallery-thumb"><img src="/images/products/bdv-1-g3.jpg" alt="Gallery 3" onerror="this.classList.add('is-broken')" /></div>
-            <div class="gallery-thumb"><img src="/images/products/bdv-1-g4.jpg" alt="Gallery 4" onerror="this.classList.add('is-broken')" /></div>
+            <div class="gallery-thumb"></div>
+            <div class="gallery-thumb"></div>
+            <div class="gallery-thumb"></div>
+            <div class="gallery-thumb"></div>
           </div>
         </div>
         <div class="product-right">
@@ -317,41 +228,37 @@
           <p class="product-description">
             High-performance bdv engineered for precision, durability, and dependable operation in mission-critical environments.
           </p>
-          <a href="/pdfs/bdv-1.pdf" class="btn-pdf">BDV Series One Brochure</a>
+          <a href="#" class="btn-pdf">BDV Series One Brochure</a>
         </div>
       </article>
 
       <article class="product-card">
         <div class="product-left">
-          <div class="product-main-img">
-            <img src="/images/products/bdv-2.jpg" alt="BDV Series Two" onerror="this.classList.add('is-broken')" />
-          </div>
+          <div class="product-main-img"></div>
           <div class="product-gallery">
-            <div class="gallery-thumb"><img src="/images/products/bdv-2-g1.jpg" alt="Gallery 1" onerror="this.classList.add('is-broken')" /></div>
-            <div class="gallery-thumb"><img src="/images/products/bdv-2-g2.jpg" alt="Gallery 2" onerror="this.classList.add('is-broken')" /></div>
-            <div class="gallery-thumb"><img src="/images/products/bdv-2-g3.jpg" alt="Gallery 3" onerror="this.classList.add('is-broken')" /></div>
-            <div class="gallery-thumb"><img src="/images/products/bdv-2-g4.jpg" alt="Gallery 4" onerror="this.classList.add('is-broken')" /></div>
+            <div class="gallery-thumb"></div>
+            <div class="gallery-thumb"></div>
+            <div class="gallery-thumb"></div>
+            <div class="gallery-thumb"></div>
           </div>
         </div>
         <div class="product-right">
           <h4 class="product-title">BDV Series Two</h4>
           <p class="product-description">
-            Robust bdv solution featuring optimized control characteristics and reliable performance in harsh conditions.
+            Robust bdv lineup featuring optimized control characteristics and reliable performance in harsh conditions.
           </p>
-          <a href="/pdfs/bdv-2.pdf" class="btn-pdf">BDV Series Two Brochure</a>
+          <a href="#" class="btn-pdf">BDV Series Two Brochure</a>
         </div>
       </article>
 
       <article class="product-card">
         <div class="product-left">
-          <div class="product-main-img">
-            <img src="/images/products/bdv-3.jpg" alt="BDV Series Three" onerror="this.classList.add('is-broken')" />
-          </div>
+          <div class="product-main-img"></div>
           <div class="product-gallery">
-            <div class="gallery-thumb"><img src="/images/products/bdv-3-g1.jpg" alt="Gallery 1" onerror="this.classList.add('is-broken')" /></div>
-            <div class="gallery-thumb"><img src="/images/products/bdv-3-g2.jpg" alt="Gallery 2" onerror="this.classList.add('is-broken')" /></div>
-            <div class="gallery-thumb"><img src="/images/products/bdv-3-g3.jpg" alt="Gallery 3" onerror="this.classList.add('is-broken')" /></div>
-            <div class="gallery-thumb"><img src="/images/products/bdv-3-g4.jpg" alt="Gallery 4" onerror="this.classList.add('is-broken')" /></div>
+            <div class="gallery-thumb"></div>
+            <div class="gallery-thumb"></div>
+            <div class="gallery-thumb"></div>
+            <div class="gallery-thumb"></div>
           </div>
         </div>
         <div class="product-right">
@@ -359,7 +266,7 @@
           <p class="product-description">
             Smart bdv package with enhanced monitoring capabilities and dependable lifecycle performance.
           </p>
-          <a href="/pdfs/bdv-3.pdf" class="btn-pdf">BDV Series Three Brochure</a>
+          <a href="#" class="btn-pdf">BDV Series Three Brochure</a>
         </div>
       </article>
     </div>
