@@ -7,7 +7,7 @@
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
-  /* استایل‌های هدر */
+  /* Header styles */
   .cpc-topbar{
     width:100%;
     background: rgba(37,150,190,0.03);
@@ -72,7 +72,7 @@
   }
 
   .cpc-nav{ display:flex; gap:24px; align-items:center; }
-  .cpc-nav-item{ position:relative; padding-bottom:8px; }
+  .cpc-nav-item{ position:relative; }
 
   .cpc-nav > a, .cpc-nav-item > a{
     color:rgba(10,20,30,0.8);
@@ -86,13 +86,13 @@
 
   .cpc-nav a:hover{ color:#2596be; }
 
-  /* دراپ‌داون مرحله اول (دسته‌بندی‌ها) */
+  /* First-level dropdown (categories) */
   .cpc-dropdown{
     display:none;
     position:absolute;
     top:100%;
     left:0;
-    margin-top:8px;
+    margin-top:-5px;
     min-width:240px;
     background:rgba(255,255,255,0.98);
     backdrop-filter:blur(10px);
@@ -102,21 +102,9 @@
     border:1px solid rgba(37,150,190,0.1);
   }
 
-  .cpc-dropdown::before{
-    content:'';
-    position:absolute;
-    top:-10px;
-    left:0;
-    width:100%;
-    height:10px;
-  }
+  .cpc-nav-item:hover .cpc-dropdown{ display:block; }
 
-  .cpc-nav-item:hover .cpc-dropdown,
-  .cpc-nav-item:focus-within .cpc-dropdown{
-    display:block;
-  }
-
-  /* آیتم‌های دراپ‌داون */
+  /* Dropdown items */
   .cpc-dropdown-item {
       position: relative;
       width: 100%;
@@ -139,8 +127,7 @@
     color:#2596be;
   }
 
-
-  /* دراپ‌داون مرحله دوم (محصولات) - باز شدن به سمت راست */
+  /* Second-level dropdown (products) - opens to the right */
   .cpc-sub-dropdown {
       display: none;
       position: absolute;
@@ -152,26 +139,16 @@
       box-shadow:0 8px 24px rgba(12,20,30,0.12);
       padding:8px 0;
       border:1px solid rgba(37,150,190,0.1);
-      margin-left: 12px;
+      margin-left: 5px;
   }
 
-  .cpc-sub-dropdown::before{
-      content:'';
-      position:absolute;
-      top:0;
-      left:-12px;
-      width:12px;
-      height:100%;
-  }
-
-  .cpc-dropdown-item:hover .cpc-sub-dropdown,
-  .cpc-dropdown-item:focus-within .cpc-sub-dropdown {
+  .cpc-dropdown-item:hover .cpc-sub-dropdown {
       display: block;
   }
 
   .cpc-arrow { font-size: 10px; opacity: 0.5; }
 
-  /* باکس جستجو */
+  /* Search box */
   .cpc-search-box{
     display:flex;
     align-items:center;
@@ -192,7 +169,7 @@
     color:#0f1b2b;
   }
 
-  /* ریسپانسیو موبایل */
+  /* Mobile responsive */
   @media (max-width:768px){
     .cpc-topbar{gap:14px;font-size:10px;}
     .cpc-header{flex-direction:column;gap:14px;top:25px;padding:14px;align-items:stretch;}
@@ -228,7 +205,7 @@
 
 <header class="cpc-header" role="banner">
   <div class="cpc-brand">
-    <!-- مسیر لوگو را چک کنید که درست باشد -->
+    <!-- Ensure the logo path is correct -->
     <img class="cpc-logo" src="/images/cpc-logo.png" alt="CPC - Control Process Components" />
     <button class="cpc-menu-toggle" type="button" aria-expanded="false" aria-controls="cpcMainNav" onclick="cpcToggleMenu()">
       ☰ Menu
@@ -241,25 +218,71 @@
     <div class="cpc-nav-item">
       <a href="/products">PRODUCTS</a>
       <div class="cpc-dropdown">
+        <?php
+        // --- Begin PHP for auto-generated menu ---
 
-        <a href="/type-category-bdv.html">BDV</a>
-        <a href="/type-category-esdv.html">ESDV</a>
-        <a href="/type-category-flow-control-valve.html">Flow Control Valve</a>
-        <a href="/type-category-gov.html">GOV</a>
-        <a href="/type-category-hipps.html">HIPPS</a>
-        <a href="/type-category-lbv.html">LBV</a>
-        <a href="/type-category-linear-actuator.html">Linear Actuator</a>
-        <a href="/type-category-modular-application.html">Modular Application</a>
-        <a href="/type-category-on-off-application.html">On/Off Application</a>
-        <a href="/type-category-pressure-control-valve.html">Pressure Control Valve</a>
-        <a href="/type-category-quarter-turn-actuator.html">Quarter Turn Actuator</a>
-        <a href="/type-category-shut-off-valve.html">Shut-off Valve</a>
-        <a href="/type-category-temperature-control-valve.html">Temperature Control Valve</a>
-        <a href="/type-category-xv.html">XV</a>
+        // Check if WooCommerce is active
+        if ( class_exists( 'WooCommerce' ) ) {
+            // 1. Fetch all product categories
+            $args = array(
+                'taxonomy'     => 'product_cat',
+                'orderby'      => 'name',
+                'show_count'   => 0,
+                'pad_counts'   => 0,
+                'hierarchical' => 1,
+                'title_li'     => '',
+                'hide_empty'   => 1
+            );
+            $all_categories = get_terms( $args );
+
+            if ( ! empty( $all_categories ) && ! is_wp_error( $all_categories ) ) {
+                foreach ( $all_categories as $cat ) {
+                    // Get category link
+                    $cat_link = get_term_link( $cat );
+
+                    // 2. Fetch products for this category
+                    // For performance, fetch the latest 10 products per category
+                    $product_args = array(
+                        'post_type' => 'product',
+                        'posts_per_page' => 10,
+                        'tax_query' => array(
+                            array(
+                                'taxonomy' => 'product_cat',
+                                'field' => 'term_id',
+                                'terms' => $cat->term_id,
+                            )
+                        )
+                    );
+                    $products = get_posts($product_args);
+
+                    // Start category item (level 1)
+                    echo '<div class="cpc-dropdown-item">';
+                    echo '<a href="' . esc_url($cat_link) . '">';
+                    echo esc_html($cat->name);
+                    // If products exist, show a small arrow
+                    if($products) { echo ' <span class="cpc-arrow">›</span>'; }
+                    echo '</a>';
+
+                    // 3. If products exist, build the sub-menu (level 2)
+                    if ( $products ) {
+                        echo '<div class="cpc-sub-dropdown">';
+                        foreach ( $products as $prod ) {
+                            echo '<a href="' . get_permalink($prod->ID) . '">' . esc_html($prod->post_title) . '</a>';
+                        }
+                        echo '</div>'; // End sub-menu
+                    }
+                    echo '</div>'; // End category item
+                }
+            }
+        } else {
+            echo '<a href="#">WooCommerce is not active</a>';
+        }
+        // --- End PHP block ---
+        ?>
       </div>
     </div>
 
-    <!-- لینک‌های ثابت طبق درخواست -->
+    <!-- Fixed links per request -->
     <div class="cpc-nav-item">
       <a href="/brands">BRANDS</a>
       <div class="cpc-dropdown">
@@ -281,7 +304,7 @@
 function cpcPerformSearch() {
   const searchValue = document.getElementById('cpcSearchInput').value.trim();
   if (searchValue) {
-    // جستجوی استاندارد وردپرس در محصولات
+    // Standard WordPress search scoped to products
     window.location.href = '/?s=' + encodeURIComponent(searchValue) + '&post_type=product';
   }
 }
