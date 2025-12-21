@@ -110,7 +110,8 @@
       width: 100%;
   }
 
-  .cpc-dropdown a {
+  .cpc-dropdown a,
+  .cpc-dropdown-label {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -122,9 +123,14 @@
     transition:all 0.2s;
   }
 
-  .cpc-dropdown a:hover {
+  .cpc-dropdown a:hover,
+  .cpc-dropdown-label:hover {
     background:rgba(37,150,190,0.08);
     color:#2596be;
+  }
+
+  .cpc-dropdown-label {
+    cursor: default;
   }
 
   /* دراپ‌داون مرحله دوم (محصولات) - باز شدن به سمت راست */
@@ -208,7 +214,7 @@
     <!-- مسیر لوگو را چک کنید که درست باشد -->
     <img class="cpc-logo" src="/images/cpc-logo.png" alt="CPC - Control Process Components" />
     <button class="cpc-menu-toggle" type="button" aria-expanded="false" aria-controls="cpcMainNav" onclick="cpcToggleMenu()">
-      ☰ Menu
+      ☰
     </button>
   </div>
 
@@ -237,9 +243,6 @@
 
             if ( ! empty( $all_categories ) && ! is_wp_error( $all_categories ) ) {
                 foreach ( $all_categories as $cat ) {
-                    // دریافت لینک دسته‌بندی
-                    $cat_link = get_term_link( $cat );
-
                     // 2. دریافت محصولات برای این دسته‌بندی خاص
                     // برای بهینه‌سازی، فعلاً ۱۰ محصول آخر هر دسته را می‌گیریم
                     $product_args = array(
@@ -257,17 +260,19 @@
 
                     // شروع آیتم دسته‌بندی (مرحله اول)
                     echo '<div class="cpc-dropdown-item">';
-                    echo '<a href="' . esc_url($cat_link) . '">';
+                    echo '<span class="cpc-dropdown-label">';
                     echo esc_html($cat->name);
                     // اگر محصولی داشت، یک فلش کوچک نشان بده
                     if($products) { echo ' <span class="cpc-arrow">›</span>'; }
-                    echo '</a>';
+                    echo '</span>';
 
                     // 3. اگر محصولی وجود داشت، زیر-منوی آن را بساز (مرحله دوم)
                     if ( $products ) {
                         echo '<div class="cpc-sub-dropdown">';
                         foreach ( $products as $prod ) {
-                            echo '<a href="' . get_permalink($prod->ID) . '">' . esc_html($prod->post_title) . '</a>';
+                            $product_slug = $prod->post_name;
+                            $product_url = home_url('/' . $product_slug . '/');
+                            echo '<a href="' . esc_url($product_url) . '">' . esc_html($prod->post_title) . '</a>';
                         }
                         echo '</div>'; // پایان زیر-منو
                     }

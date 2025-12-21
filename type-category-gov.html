@@ -85,7 +85,12 @@
   }
 
   .page-main{max-width:1400px;margin:0 auto;padding:24px 20px 40px}
-  .page-title{display:none}
+  .page-title{
+    font-size:32px;
+    font-weight:700;
+    color:#071428;
+    margin-bottom:12px;
+  }
   .page-desc{
     font-size:16px;
     color:rgba(8,18,30,0.7);
@@ -151,15 +156,7 @@
     z-index:1;
   }
   .product-main-img::after{
-    content:'Sample Image';
-    position:absolute;
-    font-size:14px;
-    letter-spacing:0.5px;
-    color:rgba(7,20,40,0.45);
-    background:rgba(255,255,255,0.6);
-    padding:6px 12px;
-    border-radius:999px;
-    z-index:2;
+    content:'';
   }
   .product-main-img img{
     width:100%;
@@ -167,6 +164,9 @@
     object-fit:cover;
     position:relative;
     z-index:3;
+  }
+  .product-main-img img.is-broken{
+    display:none;
   }
 
   .product-gallery{
@@ -204,6 +204,9 @@
     width:100%;
     height:100%;
     object-fit:cover;
+  }
+  .gallery-thumb img.is-broken{
+    display:none;
   }
 
   .product-right{
@@ -284,20 +287,13 @@
   </div>
   <div class="hero-orb hero-orb1"></div>
   <div class="hero-orb hero-orb2"></div>
-  <div class="hero-content">
-    <div class="hero-title-box">
-      <h1 style="font-size:36px;font-weight:800;margin:0 0 8px 0;text-shadow:0 4px 16px rgba(0,0,0,0.2)">
-        Flow Control Valve
-      </h1>
-      <p style="font-size:14px;opacity:0.95;margin:0">Control Valve Solutions</p>
-    </div>
-  </div>
+  <div class="hero-content"></div>
 </section>
 
 <main class="page-main">
-  <h2 class="page-title">Flow Control Valve</h2>
+  <h2 class="page-title">GOV</h2>
   <p class="page-desc">
-    Premium flow control valves designed for precise fluid regulation in demanding industrial environments. Our advanced solutions deliver exceptional accuracy, reliability, and performance across diverse applications.
+    Premium gov solutions designed for demanding industrial environments. Our advanced designs deliver exceptional reliability, precision, and performance across critical applications.
   </p>
 
   <section class="products-section">
@@ -307,66 +303,65 @@
       <article class="product-card">
         <div class="product-left">
           <div class="product-main-img">
-            <img src="/images/products/flow-valve-1.jpg" alt="Precision Flow Control Valve" />
+            <img src="/images/products/gov-1.jpg" alt="GOV Series One" onerror="this.classList.add('is-broken')" />
           </div>
           <div class="product-gallery">
-            <div class="gallery-thumb"><img src="/images/products/flow-valve-1-g1.jpg" alt="Gallery 1" /></div>
-            <div class="gallery-thumb"><img src="/images/products/flow-valve-1-g2.jpg" alt="Gallery 2" /></div>
-            <div class="gallery-thumb"><img src="/images/products/flow-valve-1-g3.jpg" alt="Gallery 3" /></div>
-            <div class="gallery-thumb"><img src="/images/products/flow-valve-1-g4.jpg" alt="Gallery 4" /></div>
+            <div class="gallery-thumb"><img src="/images/products/gov-1-g1.jpg" alt="Gallery 1" onerror="this.classList.add('is-broken')" /></div>
+            <div class="gallery-thumb"><img src="/images/products/gov-1-g2.jpg" alt="Gallery 2" onerror="this.classList.add('is-broken')" /></div>
+            <div class="gallery-thumb"><img src="/images/products/gov-1-g3.jpg" alt="Gallery 3" onerror="this.classList.add('is-broken')" /></div>
+            <div class="gallery-thumb"><img src="/images/products/gov-1-g4.jpg" alt="Gallery 4" onerror="this.classList.add('is-broken')" /></div>
           </div>
         </div>
         <div class="product-right">
-          <h4 class="product-title">Precision Flow Control Valve</h4>
+          <h4 class="product-title">GOV Series One</h4>
           <p class="product-description">
-            High-accuracy flow control valve engineered for critical process applications. Features advanced metering technology, superior throttling characteristics, and exceptional rangeability for optimal flow management.
+            High-performance gov engineered for precision, durability, and dependable operation in mission-critical environments.
           </p>
-          <a href="/pdfs/flow-valve-1.pdf" class="btn-pdf">Precision Flow Control Valve Brochure</a>
+          <a href="/pdfs/gov-1.pdf" class="btn-pdf">GOV Series One Brochure</a>
         </div>
       </article>
 
       <article class="product-card">
         <div class="product-left">
           <div class="product-main-img">
-            <img src="/images/products/flow-valve-2.jpg" alt="Industrial Flow Regulator" />
+            <img src="/images/products/gov-2.jpg" alt="GOV Series Two" onerror="this.classList.add('is-broken')" />
           </div>
           <div class="product-gallery">
-            <div class="gallery-thumb"><img src="/images/products/flow-valve-2-g1.jpg" alt="Gallery 1" /></div>
-            <div class="gallery-thumb"><img src="/images/products/flow-valve-2-g2.jpg" alt="Gallery 2" /></div>
-            <div class="gallery-thumb"><img src="/images/products/flow-valve-2-g3.jpg" alt="Gallery 3" /></div>
-            <div class="gallery-thumb"><img src="/images/products/flow-valve-2-g4.jpg" alt="Gallery 4" /></div>
+            <div class="gallery-thumb"><img src="/images/products/gov-2-g1.jpg" alt="Gallery 1" onerror="this.classList.add('is-broken')" /></div>
+            <div class="gallery-thumb"><img src="/images/products/gov-2-g2.jpg" alt="Gallery 2" onerror="this.classList.add('is-broken')" /></div>
+            <div class="gallery-thumb"><img src="/images/products/gov-2-g3.jpg" alt="Gallery 3" onerror="this.classList.add('is-broken')" /></div>
+            <div class="gallery-thumb"><img src="/images/products/gov-2-g4.jpg" alt="Gallery 4" onerror="this.classList.add('is-broken')" /></div>
           </div>
         </div>
         <div class="product-right">
-          <h4 class="product-title">Industrial Flow Regulator</h4>
+          <h4 class="product-title">GOV Series Two</h4>
           <p class="product-description">
-            Heavy-duty flow regulation system built for industrial excellence. Offers robust construction, wide flow capacity range, and reliable performance in harsh operating conditions with minimal pressure drop.
+            Robust gov solution featuring optimized control characteristics and reliable performance in harsh conditions.
           </p>
-          <a href="/pdfs/flow-valve-2.pdf" class="btn-pdf">Industrial Flow Regulator Brochure</a>
+          <a href="/pdfs/gov-2.pdf" class="btn-pdf">GOV Series Two Brochure</a>
         </div>
       </article>
 
       <article class="product-card">
         <div class="product-left">
           <div class="product-main-img">
-            <img src="/images/products/flow-valve-3.jpg" alt="Smart Flow Management System" />
+            <img src="/images/products/gov-3.jpg" alt="GOV Series Three" onerror="this.classList.add('is-broken')" />
           </div>
           <div class="product-gallery">
-            <div class="gallery-thumb"><img src="/images/products/flow-valve-3-g1.jpg" alt="Gallery 1" /></div>
-            <div class="gallery-thumb"><img src="/images/products/flow-valve-3-g2.jpg" alt="Gallery 2" /></div>
-            <div class="gallery-thumb"><img src="/images/products/flow-valve-3-g3.jpg" alt="Gallery 3" /></div>
-            <div class="gallery-thumb"><img src="/images/products/flow-valve-3-g4.jpg" alt="Gallery 4" /></div>
+            <div class="gallery-thumb"><img src="/images/products/gov-3-g1.jpg" alt="Gallery 1" onerror="this.classList.add('is-broken')" /></div>
+            <div class="gallery-thumb"><img src="/images/products/gov-3-g2.jpg" alt="Gallery 2" onerror="this.classList.add('is-broken')" /></div>
+            <div class="gallery-thumb"><img src="/images/products/gov-3-g3.jpg" alt="Gallery 3" onerror="this.classList.add('is-broken')" /></div>
+            <div class="gallery-thumb"><img src="/images/products/gov-3-g4.jpg" alt="Gallery 4" onerror="this.classList.add('is-broken')" /></div>
           </div>
         </div>
         <div class="product-right">
-          <h4 class="product-title">Smart Flow Management System</h4>
+          <h4 class="product-title">GOV Series Three</h4>
           <p class="product-description">
-            Intelligent flow control solution with digital monitoring capabilities. Integrates seamlessly with automation systems, provides real-time flow data, and enables predictive maintenance scheduling.
+            Smart gov package with enhanced monitoring capabilities and dependable lifecycle performance.
           </p>
-          <a href="/pdfs/flow-valve-3.pdf" class="btn-pdf">Smart Flow Management System Brochure</a>
+          <a href="/pdfs/gov-3.pdf" class="btn-pdf">GOV Series Three Brochure</a>
         </div>
       </article>
-
     </div>
   </section>
 </main>
