@@ -122,8 +122,7 @@
       width: 100%;
   }
 
-  .cpc-dropdown a,
-  .cpc-dropdown-label {
+  .cpc-dropdown a {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -135,24 +134,11 @@
     transition:all 0.2s;
   }
 
-  .cpc-dropdown a:hover,
-  .cpc-dropdown-label:hover {
+  .cpc-dropdown a:hover {
     background:rgba(37,150,190,0.08);
     color:#2596be;
   }
 
-  .cpc-dropdown-label {
-    cursor: default;
-  }
-
-  .cpc-dropdown-section{
-    padding:6px 20px 4px;
-    font-size:11px;
-    font-weight:700;
-    text-transform:uppercase;
-    letter-spacing:0.06em;
-    color:rgba(10,20,30,0.45);
-  }
 
   /* دراپ‌داون مرحله دوم (محصولات) - باز شدن به سمت راست */
   .cpc-sub-dropdown {
@@ -245,7 +231,7 @@
     <!-- مسیر لوگو را چک کنید که درست باشد -->
     <img class="cpc-logo" src="/images/cpc-logo.png" alt="CPC - Control Process Components" />
     <button class="cpc-menu-toggle" type="button" aria-expanded="false" aria-controls="cpcMainNav" onclick="cpcToggleMenu()">
-      ☰
+      ☰ Menu
     </button>
   </div>
 
@@ -255,7 +241,7 @@
     <div class="cpc-nav-item">
       <a href="/products">PRODUCTS</a>
       <div class="cpc-dropdown">
-        <div class="cpc-dropdown-section">Product Types</div>
+
         <a href="/type-category-bdv.html">BDV</a>
         <a href="/type-category-esdv.html">ESDV</a>
         <a href="/type-category-flow-control-valve.html">Flow Control Valve</a>
