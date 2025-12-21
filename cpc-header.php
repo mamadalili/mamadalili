@@ -72,7 +72,7 @@
   }
 
   .cpc-nav{ display:flex; gap:24px; align-items:center; }
-  .cpc-nav-item{ position:relative; }
+  .cpc-nav-item{ position:relative; padding-bottom:8px; }
 
   .cpc-nav > a, .cpc-nav-item > a{
     color:rgba(10,20,30,0.8);
@@ -92,7 +92,7 @@
     position:absolute;
     top:100%;
     left:0;
-    margin-top:-5px;
+    margin-top:8px;
     min-width:240px;
     background:rgba(255,255,255,0.98);
     backdrop-filter:blur(10px);
@@ -102,7 +102,19 @@
     border:1px solid rgba(37,150,190,0.1);
   }
 
-  .cpc-nav-item:hover .cpc-dropdown{ display:block; }
+  .cpc-dropdown::before{
+    content:'';
+    position:absolute;
+    top:-10px;
+    left:0;
+    width:100%;
+    height:10px;
+  }
+
+  .cpc-nav-item:hover .cpc-dropdown,
+  .cpc-nav-item:focus-within .cpc-dropdown{
+    display:block;
+  }
 
   /* آیتم‌های دراپ‌داون */
   .cpc-dropdown-item {
@@ -133,6 +145,15 @@
     cursor: default;
   }
 
+  .cpc-dropdown-section{
+    padding:6px 20px 4px;
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:rgba(10,20,30,0.45);
+  }
+
   /* دراپ‌داون مرحله دوم (محصولات) - باز شدن به سمت راست */
   .cpc-sub-dropdown {
       display: none;
@@ -145,10 +166,20 @@
       box-shadow:0 8px 24px rgba(12,20,30,0.12);
       padding:8px 0;
       border:1px solid rgba(37,150,190,0.1);
-      margin-left: 5px;
+      margin-left: 12px;
   }
 
-  .cpc-dropdown-item:hover .cpc-sub-dropdown {
+  .cpc-sub-dropdown::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:-12px;
+      width:12px;
+      height:100%;
+  }
+
+  .cpc-dropdown-item:hover .cpc-sub-dropdown,
+  .cpc-dropdown-item:focus-within .cpc-sub-dropdown {
       display: block;
   }
 
@@ -224,6 +255,7 @@
     <div class="cpc-nav-item">
       <a href="/products">PRODUCTS</a>
       <div class="cpc-dropdown">
+        <div class="cpc-dropdown-section">Product Types</div>
         <a href="/type-category-bdv.html">BDV</a>
         <a href="/type-category-esdv.html">ESDV</a>
         <a href="/type-category-flow-control-valve.html">Flow Control Valve</a>
