@@ -7,7 +7,7 @@
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
-  /* استایل‌های هدر */
+  /* Header styles */
   .cpc-topbar{
     width:100%;
     background: rgba(37,150,190,0.03);
@@ -86,7 +86,7 @@
 
   .cpc-nav a:hover{ color:#2596be; }
 
-  /* دراپ‌داون مرحله اول (دسته‌بندی‌ها) */
+  /* First-level dropdown (categories) */
   .cpc-dropdown{
     display:none;
     position:absolute;
@@ -104,7 +104,7 @@
 
   .cpc-nav-item:hover .cpc-dropdown{ display:block; }
 
-  /* آیتم‌های دراپ‌داون */
+  /* Dropdown items */
   .cpc-dropdown-item {
       position: relative;
       width: 100%;
@@ -127,7 +127,7 @@
     color:#2596be;
   }
 
-  /* دراپ‌داون مرحله دوم (محصولات) - باز شدن به سمت راست */
+  /* Second-level dropdown (products) - opens to the right */
   .cpc-sub-dropdown {
       display: none;
       position: absolute;
@@ -148,7 +148,7 @@
 
   .cpc-arrow { font-size: 10px; opacity: 0.5; }
 
-  /* باکس جستجو */
+  /* Search box */
   .cpc-search-box{
     display:flex;
     align-items:center;
@@ -169,7 +169,7 @@
     color:#0f1b2b;
   }
 
-  /* ریسپانسیو موبایل */
+  /* Mobile responsive */
   @media (max-width:768px){
     .cpc-topbar{gap:14px;font-size:10px;}
     .cpc-header{flex-direction:column;gap:14px;top:25px;padding:14px;align-items:stretch;}
@@ -205,7 +205,7 @@
 
 <header class="cpc-header" role="banner">
   <div class="cpc-brand">
-    <!-- مسیر لوگو را چک کنید که درست باشد -->
+    <!-- Make sure the logo path is correct -->
     <img class="cpc-logo" src="/images/cpc-logo.png" alt="CPC - Control Process Components" />
     <button class="cpc-menu-toggle" type="button" aria-expanded="false" aria-controls="cpcMainNav" onclick="cpcToggleMenu()">
       ☰ Menu
@@ -219,11 +219,11 @@
       <a href="/products">PRODUCTS</a>
       <div class="cpc-dropdown">
         <?php
-        // --- شروع بخش PHP برای تولید خودکار منو ---
+        // --- Start PHP section for auto-generated menu ---
 
-        // بررسی فعال بودن ووکامرس
+        // Check if WooCommerce is active
         if ( class_exists( 'WooCommerce' ) ) {
-            // 1. دریافت تمام دسته‌بندی‌های محصولات
+            // 1. Fetch all product categories
             $args = array(
                 'taxonomy'     => 'product_cat',
                 'orderby'      => 'name',
@@ -237,11 +237,11 @@
 
             if ( ! empty( $all_categories ) && ! is_wp_error( $all_categories ) ) {
                 foreach ( $all_categories as $cat ) {
-                    // دریافت لینک دسته‌بندی
+                    // Get category link
                     $cat_link = get_term_link( $cat );
 
-                    // 2. دریافت محصولات برای این دسته‌بندی خاص
-                    // برای بهینه‌سازی، فعلاً ۱۰ محصول آخر هر دسته را می‌گیریم
+                    // 2. Fetch products for this specific category
+                    // For optimization, fetch the latest 10 products per category
                     $product_args = array(
                         'post_type' => 'product',
                         'posts_per_page' => 10,
@@ -255,34 +255,34 @@
                     );
                     $products = get_posts($product_args);
 
-                    // شروع آیتم دسته‌بندی (مرحله اول)
+                    // Start category item (level 1)
                     echo '<div class="cpc-dropdown-item">';
                     echo '<a href="' . esc_url($cat_link) . '">';
                     echo esc_html($cat->name);
-                    // اگر محصولی داشت، یک فلش کوچک نشان بده
+                    // If there are products, show a small arrow
                     if($products) { echo ' <span class="cpc-arrow">›</span>'; }
                     echo '</a>';
 
-                    // 3. اگر محصولی وجود داشت، زیر-منوی آن را بساز (مرحله دوم)
+                    // 3. If products exist, render the submenu (level 2)
                     if ( $products ) {
                         echo '<div class="cpc-sub-dropdown">';
                         foreach ( $products as $prod ) {
                             echo '<a href="' . get_permalink($prod->ID) . '">' . esc_html($prod->post_title) . '</a>';
                         }
-                        echo '</div>'; // پایان زیر-منو
+                        echo '</div>'; // End submenu
                     }
-                    echo '</div>'; // پایان آیتم دسته‌بندی
+                    echo '</div>'; // End category item
                 }
             }
         } else {
             echo '<a href="#">WooCommerce is not active</a>';
         }
-        // --- پایان بخش PHP ---
+        // --- End PHP section ---
         ?>
       </div>
     </div>
 
-    <!-- لینک‌های ثابت طبق درخواست -->
+    <!-- Static links -->
     <div class="cpc-nav-item">
       <a href="/brands">BRANDS</a>
       <div class="cpc-dropdown">
@@ -304,7 +304,7 @@
 function cpcPerformSearch() {
   const searchValue = document.getElementById('cpcSearchInput').value.trim();
   if (searchValue) {
-    // جستجوی استاندارد وردپرس در محصولات
+    // Standard WordPress product search
     window.location.href = '/?s=' + encodeURIComponent(searchValue) + '&post_type=product';
   }
 }
