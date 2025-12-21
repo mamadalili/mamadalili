@@ -270,67 +270,6 @@
         <a href="/type-category-shut-off-valve.html">Shut-off Valve</a>
         <a href="/type-category-temperature-control-valve.html">Temperature Control Valve</a>
         <a href="/type-category-xv.html">XV</a>
-        <div class="cpc-dropdown-section">Products</div>
-        <?php
-        // --- شروع بخش PHP برای تولید خودکار منو ---
-
-        // بررسی فعال بودن ووکامرس
-        if ( class_exists( 'WooCommerce' ) ) {
-            // 1. دریافت تمام دسته‌بندی‌های محصولات
-            $args = array(
-                'taxonomy'     => 'product_cat',
-                'orderby'      => 'name',
-                'show_count'   => 0,
-                'pad_counts'   => 0,
-                'hierarchical' => 1,
-                'title_li'     => '',
-                'hide_empty'   => 1
-            );
-            $all_categories = get_terms( $args );
-
-            if ( ! empty( $all_categories ) && ! is_wp_error( $all_categories ) ) {
-                foreach ( $all_categories as $cat ) {
-                    // 2. دریافت محصولات برای این دسته‌بندی خاص
-                    // برای بهینه‌سازی، فعلاً ۱۰ محصول آخر هر دسته را می‌گیریم
-                    $product_args = array(
-                        'post_type' => 'product',
-                        'posts_per_page' => 10,
-                        'tax_query' => array(
-                            array(
-                                'taxonomy' => 'product_cat',
-                                'field' => 'term_id',
-                                'terms' => $cat->term_id,
-                            )
-                        )
-                    );
-                    $products = get_posts($product_args);
-
-                    // شروع آیتم دسته‌بندی (مرحله اول)
-                    echo '<div class="cpc-dropdown-item">';
-                    echo '<span class="cpc-dropdown-label">';
-                    echo esc_html($cat->name);
-                    // اگر محصولی داشت، یک فلش کوچک نشان بده
-                    if($products) { echo ' <span class="cpc-arrow">›</span>'; }
-                    echo '</span>';
-
-                    // 3. اگر محصولی وجود داشت، زیر-منوی آن را بساز (مرحله دوم)
-                    if ( $products ) {
-                        echo '<div class="cpc-sub-dropdown">';
-                        foreach ( $products as $prod ) {
-                            $product_slug = $prod->post_name;
-                            $product_url = home_url('/' . $product_slug . '/');
-                            echo '<a href="' . esc_url($product_url) . '">' . esc_html($prod->post_title) . '</a>';
-                        }
-                        echo '</div>'; // پایان زیر-منو
-                    }
-                    echo '</div>'; // پایان آیتم دسته‌بندی
-                }
-            }
-        } else {
-            echo '<a href="#">WooCommerce is not active</a>';
-        }
-        // --- پایان بخش PHP ---
-        ?>
       </div>
     </div>
 
