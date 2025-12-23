@@ -224,14 +224,16 @@
       <a href="#">PRODUCTS</a>
       <div class="cpc-dropdown">
           
-          <!-- Shut-off / On-off Valve Category -->
+          <!-- Shut Off Valve Category -->
           <div class="cpc-dropdown-item">
-            <span>Shut-off / On-off Valve <span class="cpc-arrow">›</span></span>
+            <span>Shut Off Valve <span class="cpc-arrow">›</span></span>
             <div class="cpc-sub-dropdown">
-              <a href="/type-category-bdv/">BDV - Blowdown Valve</a>
               <a href="/type-category-hipps/">HIPPS - High Integrity Pressure Protection System</a>
-              <a href="/type-category-shut-off-valve/">Shut-off Valve</a>
               <a href="/type-category-xv/">XV - Emergency Shut Down Valve</a>
+              <a href="/type-category-esdv/">ESDV - Emergency Shut Down Valve</a>
+              <a href="/type-category-bdv/">BDV - Blowdown Valve</a>
+              <a href="/type-category-lbv/">LBV - Level Balance Valve</a>
+              <a href="/type-category-gov/">GOV - Gas Over Oil Valve</a>
             </div>
           </div>
 
@@ -239,10 +241,8 @@
           <div class="cpc-dropdown-item">
             <span>Control Valve <span class="cpc-arrow">›</span></span>
             <div class="cpc-sub-dropdown">
-              <a href="/type-category-flow-control-valve/">Flow Control Valve</a>
-              <a href="/type-category-gov/">GOV - Gas Over Oil Valve</a>
-              <a href="/type-category-lbv/">LBV - Level Balance Valve</a>
               <a href="/type-category-pressure-control-valve/">Pressure Control Valve</a>
+              <a href="/type-category-flow-control-valve/">Flow Control Valve</a>
               <a href="/type-category-temperature-control-valve/">Temperature Control Valve</a>
             </div>
           </div>
@@ -251,18 +251,17 @@
           <div class="cpc-dropdown-item">
             <span>Motor Operated Valve <span class="cpc-arrow">›</span></span>
             <div class="cpc-sub-dropdown">
-              <a href="/type-category-linear-actuator/">Linear Actuator</a>
-              <a href="/type-category-quarter-turn-actuator/">Quarter Turn Actuator</a>
+              <a href="/type-category-on-off-application/">ON-OFF Application</a>
+              <a href="/type-category-modular-application/">Modular Application</a>
             </div>
           </div>
 
-          <!-- Valve Accessories Category -->
+          <!-- Damper Actuator Category -->
           <div class="cpc-dropdown-item">
-            <span>Valve Accessories <span class="cpc-arrow">›</span></span>
+            <span>Damper Actuator <span class="cpc-arrow">›</span></span>
             <div class="cpc-sub-dropdown">
-              <a href="/type-category-esdv/">ESDV - Emergency Shut Down Valve</a>
-              <a href="/type-category-modular-application/">Modular Application</a>
-              <a href="/type-category-on-off-application/">On-off Application</a>
+              <a href="/type-category-quarter-turn-actuator/">Quarter Turn Actuator</a>
+              <a href="/type-category-linear-actuator/">Linear Actuator</a>
             </div>
           </div>
 
@@ -307,4 +306,3 @@ document.getElementById('cpcSearchInput').addEventListener('keypress', function(
   }
 });
 </script>
-<?php
