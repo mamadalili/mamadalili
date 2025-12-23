@@ -1,8 +1,3 @@
-<?php
-/**
- * CPC Header with Dynamic WooCommerce Menu
- * This MUST be placed in a PHP Snippet, not a standard HTML/Header plugin box.
- */
 ?>
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -59,11 +54,12 @@
     background:rgba(255,255,255,0.65);
     color:#0f1b2b;
     border-radius:8px;
-    padding:8px 12px;
-    font-size:14px;
-    font-weight:600;
+    padding:10px 14px;
+    font-size:20px;
+    font-weight:400;
     cursor:pointer;
     transition:all 0.2s;
+    line-height:1;
   }
 
   .cpc-menu-toggle:hover{
@@ -86,7 +82,7 @@
 
   .cpc-nav a:hover{ color:#2596be; }
 
-  /* First-level dropdown (categories) */
+  /* First-level dropdown */
   .cpc-dropdown{
     display:none;
     position:absolute;
@@ -106,47 +102,57 @@
 
   /* Dropdown items */
   .cpc-dropdown-item {
-      position: relative;
-      width: 100%;
+    position: relative;
+    width: 100%;
   }
 
-  .cpc-dropdown a {
+  .cpc-dropdown-item > span {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding:10px 20px;
     color:rgba(10,20,30,0.8);
     font-size:13px;
+    font-weight:600;
+    cursor: default;
+    user-select: none;
+  }
+
+  .cpc-sub-dropdown a {
+    display: block;
+    padding:10px 20px;
+    color:rgba(10,20,30,0.75);
+    font-size:13px;
     font-weight:500;
     text-decoration: none;
     transition:all 0.2s;
   }
 
-  .cpc-dropdown a:hover {
+  .cpc-sub-dropdown a:hover {
     background:rgba(37,150,190,0.08);
     color:#2596be;
   }
 
+  .cpc-arrow { font-size: 10px; opacity: 0.5; }
+
   /* Second-level dropdown (products) - opens to the right */
   .cpc-sub-dropdown {
-      display: none;
-      position: absolute;
-      left: 100%;
-      top: 0;
-      min-width: 240px;
-      background:rgba(255,255,255,0.98);
-      border-radius:8px;
-      box-shadow:0 8px 24px rgba(12,20,30,0.12);
-      padding:8px 0;
-      border:1px solid rgba(37,150,190,0.1);
-      margin-left: 5px;
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    min-width: 240px;
+    background:rgba(255,255,255,0.98);
+    border-radius:8px;
+    box-shadow:0 8px 24px rgba(12,20,30,0.12);
+    padding:8px 0;
+    border:1px solid rgba(37,150,190,0.1);
+    margin-left: -3px;
   }
 
   .cpc-dropdown-item:hover .cpc-sub-dropdown {
-      display: block;
+    display: block;
   }
-
-  .cpc-arrow { font-size: 10px; opacity: 0.5; }
 
   /* Search box */
   .cpc-search-box{
@@ -174,7 +180,7 @@
     .cpc-topbar{gap:14px;font-size:10px;}
     .cpc-header{flex-direction:column;gap:14px;top:25px;padding:14px;align-items:stretch;}
     .cpc-brand{justify-content:space-between;}
-    .cpc-menu-toggle{display:inline-flex;align-items:center;gap:8px;}
+    .cpc-menu-toggle{display:inline-flex;align-items:center;justify-content:center;}
     .cpc-nav{display:none;flex-direction:column;align-items:stretch;gap:6px;background:rgba(255,255,255,0.92);border:1px solid rgba(37,150,190,0.1);border-radius:10px;padding:10px;}
     .cpc-nav.is-open{display:flex;}
     .cpc-nav > a, .cpc-nav-item > a{padding:10px 6px;}
@@ -205,10 +211,9 @@
 
 <header class="cpc-header" role="banner">
   <div class="cpc-brand">
-    <!-- Ensure the logo path is correct -->
     <img class="cpc-logo" src="/images/cpc-logo.png" alt="CPC - Control Process Components" />
     <button class="cpc-menu-toggle" type="button" aria-expanded="false" aria-controls="cpcMainNav" onclick="cpcToggleMenu()">
-      ☰ Menu
+      ☰
     </button>
   </div>
 
@@ -216,75 +221,56 @@
     <a href="/">HOME</a>
 
     <div class="cpc-nav-item">
-      <a href="/products">PRODUCTS</a>
+      <a href="#">PRODUCTS</a>
       <div class="cpc-dropdown">
-        <?php
-        // --- Begin PHP for auto-generated menu ---
+          
+          <!-- Shut-off / On-off Valve Category -->
+          <div class="cpc-dropdown-item">
+            <span>Shut-off / On-off Valve <span class="cpc-arrow">›</span></span>
+            <div class="cpc-sub-dropdown">
+              <a href="/type-category-bdv/">BDV - Blowdown Valve</a>
+              <a href="/type-category-hipps/">HIPPS - High Integrity Pressure Protection System</a>
+              <a href="/type-category-shut-off-valve/">Shut-off Valve</a>
+              <a href="/type-category-xv/">XV - Emergency Shut Down Valve</a>
+            </div>
+          </div>
 
-        // Check if WooCommerce is active
-        if ( class_exists( 'WooCommerce' ) ) {
-            // 1. Fetch all product categories
-            $args = array(
-                'taxonomy'     => 'product_cat',
-                'orderby'      => 'name',
-                'show_count'   => 0,
-                'pad_counts'   => 0,
-                'hierarchical' => 1,
-                'title_li'     => '',
-                'hide_empty'   => 1
-            );
-            $all_categories = get_terms( $args );
+          <!-- Control Valve Category -->
+          <div class="cpc-dropdown-item">
+            <span>Control Valve <span class="cpc-arrow">›</span></span>
+            <div class="cpc-sub-dropdown">
+              <a href="/type-category-flow-control-valve/">Flow Control Valve</a>
+              <a href="/type-category-gov/">GOV - Gas Over Oil Valve</a>
+              <a href="/type-category-lbv/">LBV - Level Balance Valve</a>
+              <a href="/type-category-pressure-control-valve/">Pressure Control Valve</a>
+              <a href="/type-category-temperature-control-valve/">Temperature Control Valve</a>
+            </div>
+          </div>
 
-            if ( ! empty( $all_categories ) && ! is_wp_error( $all_categories ) ) {
-                foreach ( $all_categories as $cat ) {
-                    // Get category link
-                    $cat_link = get_term_link( $cat );
+          <!-- Motor Operated Valve Category -->
+          <div class="cpc-dropdown-item">
+            <span>Motor Operated Valve <span class="cpc-arrow">›</span></span>
+            <div class="cpc-sub-dropdown">
+              <a href="/type-category-linear-actuator/">Linear Actuator</a>
+              <a href="/type-category-quarter-turn-actuator/">Quarter Turn Actuator</a>
+            </div>
+          </div>
 
-                    // 2. Fetch products for this category
-                    // For performance, fetch the latest 10 products per category
-                    $product_args = array(
-                        'post_type' => 'product',
-                        'posts_per_page' => 10,
-                        'tax_query' => array(
-                            array(
-                                'taxonomy' => 'product_cat',
-                                'field' => 'term_id',
-                                'terms' => $cat->term_id,
-                            )
-                        )
-                    );
-                    $products = get_posts($product_args);
+          <!-- Valve Accessories Category -->
+          <div class="cpc-dropdown-item">
+            <span>Valve Accessories <span class="cpc-arrow">›</span></span>
+            <div class="cpc-sub-dropdown">
+              <a href="/type-category-esdv/">ESDV - Emergency Shut Down Valve</a>
+              <a href="/type-category-modular-application/">Modular Application</a>
+              <a href="/type-category-on-off-application/">On-off Application</a>
+            </div>
+          </div>
 
-                    // Start category item (level 1)
-                    echo '<div class="cpc-dropdown-item">';
-                    echo '<a href="' . esc_url($cat_link) . '">';
-                    echo esc_html($cat->name);
-                    // If products exist, show a small arrow
-                    if($products) { echo ' <span class="cpc-arrow">›</span>'; }
-                    echo '</a>';
-
-                    // 3. If products exist, build the sub-menu (level 2)
-                    if ( $products ) {
-                        echo '<div class="cpc-sub-dropdown">';
-                        foreach ( $products as $prod ) {
-                            echo '<a href="' . get_permalink($prod->ID) . '">' . esc_html($prod->post_title) . '</a>';
-                        }
-                        echo '</div>'; // End sub-menu
-                    }
-                    echo '</div>'; // End category item
-                }
-            }
-        } else {
-            echo '<a href="#">WooCommerce is not active</a>';
-        }
-        // --- End PHP block ---
-        ?>
       </div>
     </div>
 
-    <!-- Fixed links per request -->
     <div class="cpc-nav-item">
-      <a href="/brands">BRANDS</a>
+      <a href="#">BRANDS</a>
       <div class="cpc-dropdown">
         <a href="/ewo">EWO</a>
       </div>
@@ -304,7 +290,6 @@
 function cpcPerformSearch() {
   const searchValue = document.getElementById('cpcSearchInput').value.trim();
   if (searchValue) {
-    // Standard WordPress search scoped to products
     window.location.href = '/?s=' + encodeURIComponent(searchValue) + '&post_type=product';
   }
 }
@@ -322,3 +307,4 @@ document.getElementById('cpcSearchInput').addEventListener('keypress', function(
   }
 });
 </script>
+<?php
