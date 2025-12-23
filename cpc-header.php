@@ -306,4 +306,3 @@ document.getElementById('cpcSearchInput').addEventListener('keypress', function(
   }
 });
 </script>
-<?php
