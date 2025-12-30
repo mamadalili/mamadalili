@@ -25,6 +25,7 @@
 CPC Valve Industry Web is a category driven website built to deliver a cleaner browsing experience than classic product-first navigation.
 
 Instead of managing every page as a WooCommerce product, we use:
+
 • WordPress categories as the main content backbone  
 • A custom "category type" layer to shape different page templates  
 • Custom PHP and custom HTML blocks for full control of UI and performance
@@ -33,6 +34,7 @@ This makes managing pages easier, keeps the navigation consistent, and improves 
 
 ## Why this architecture
 Typical product-based setups become messy when you need:
+
 • Many informational pages that are not real products  
 • Multiple templates for different industrial categories  
 • A fast and consistent UX across browsing, filters, and catalogue downloads
@@ -41,12 +43,14 @@ Our approach solves that by treating categories as first-class pages, then attac
 
 ## How it works
 High level flow:
+
 • Admin creates or updates Categories  
 • Each category gets a Category Type (template behavior)  
 • Frontend renders a category page with a custom HTML layout  
 • Optional catalogue download is generated per category or per item
 
 Common patterns used:
+
 • Category landing page with featured cards  
 • Subcategory grid and navigation  
 • Template variations by category type  
