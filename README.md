@@ -1,9 +1,2 @@
-- 👋 Hi, I’m MohamadReza Dalili, @mamadalili
-- 👀 I’m interested in Technology and Programming
-- 🌱 I’m currently learning coding and AI engineering
-- 💞️ I’m looking to collaborate on GitHub solution for programming and learning new things
-
-<!---
-mamadalili/mamadalili is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+cpc valve industry web by custom html
+using category and category-type instead of product to manage pages for better user experience
