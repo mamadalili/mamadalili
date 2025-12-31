@@ -58,6 +58,40 @@ Common patterns used:
 • Template variations by category type  
 • Catalogue download button mapped to a consistent URL pattern
 
-## Project structure
-Suggested structure that stays clean on cPanel and WordPress deployments:
+<div align="center">
+  <h2>📬 Contact Me</h2>
+  <p>Interested in working together? Let's talk.</p>
 
+  <table style="border: none; border-collapse: collapse;">
+    <tr>
+      <td style="padding: 10px;">
+        <a href="mailto:mohammadreza.dalili@live.com">
+          <img src="https://img.icons8.com/ios-filled/50/000000/email-open.png" width="25" style="vertical-align:middle;"/>
+        </a>
+      </td>
+      <td style="padding: 10px; text-align: left;">
+        <strong>Email:</strong> <a href="mailto:mohammadreza.dalili@live.com" style="text-decoration: none; color: #333;">mohammadreza.dalili@live.com</a>
+      </td>
+    </tr>
+    <tr>
+      <td style="padding: 10px;">
+        <a href="https://www.linkedin.com/in/mohamadreza-dalili/">
+          <img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" width="25" style="vertical-align:middle;"/>
+        </a>
+      </td>
+      <td style="padding: 10px; text-align: left;">
+        <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mohamadreza-dalili/" target="_blank" style="text-decoration: none; color: #0077b5;">/in/mohamadreza-dalili</a>
+      </td>
+    </tr>
+    <tr>
+      <td style="padding: 10px;">
+        <a href="https://mrdalili.com">
+          <img src="https://img.icons8.com/ios-filled/50/000000/globe.png" width="25" style="vertical-align:middle;"/>
+        </a>
+      </td>
+      <td style="padding: 10px; text-align: left;">
+        <strong>Portfolio:</strong> <a href="https://mrdalili.com" target="_blank" style="text-decoration: none; color: #333;">mrdalili.com</a>
+      </td>
+    </tr>
+  </table>
+</div>
