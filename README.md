@@ -53,17 +53,6 @@ I build product-catalogue websites for brands with real inventory problems — h
 
 ---
 
-## 📊 GitHub
-
-<div align="center">
-
-![Stats](https://github-readme-stats.vercel.app/api?username=mamadalili&show_icons=true&hide_border=true&bg_color=00000000&title_color=067CC2&icon_color=067CC2&text_color=808080)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=mamadalili&layout=compact&hide_border=true&bg_color=00000000&title_color=067CC2&text_color=808080)
-
-</div>
-
----
-
 <div align="center">
   <h2>📬 Contact Me</h2>
   <p>Interested in working together? Let's talk.</p>
