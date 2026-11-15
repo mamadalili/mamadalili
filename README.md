@@ -18,6 +18,9 @@
 <a href="https://mrdalili.ir/?lang=fa"><picture><source media="(max-width: 1140px)" srcset="https://raw.githubusercontent.com/mamadalili/mamadalili/main/assets/projects/personal-fa-wide.webp"><img src="https://raw.githubusercontent.com/mamadalili/mamadalili/main/assets/projects/personal-fa.webp" alt="سایت شخصی محمدرضا دلیلی با طرح مرکب صفحهٔ اصلی"></picture></a>
 <a href="https://onlinetahrir.com/"><picture><source media="(max-width: 1140px)" srcset="https://raw.githubusercontent.com/mamadalili/mamadalili/main/assets/projects/tahrir-fa-wide.webp"><img src="https://raw.githubusercontent.com/mamadalili/mamadalili/main/assets/projects/tahrir-fa.webp" alt="فروشگاه آنلاین تحریر با عکس دفتر سیمی کرفت"></picture></a>
 <a href="https://boomerangkala.com/"><picture><source media="(max-width: 1140px)" srcset="https://raw.githubusercontent.com/mamadalili/mamadalili/main/assets/projects/kala-fa-wide.webp"><img src="https://raw.githubusercontent.com/mamadalili/mamadalili/main/assets/projects/kala-fa.webp" alt="بومرنگ کالا، فروشگاه روشویی و شیرآلات در ایران؛ مدل پیتو"></picture></a>
+<br>
+<a href="https://github.com/mamadalili/cpc-final-draft"><picture><source media="(max-width: 1140px)" srcset="https://raw.githubusercontent.com/mamadalili/mamadalili/main/assets/projects/cpc-fa-wide.webp"><img src="https://raw.githubusercontent.com/mamadalili/mamadalili/main/assets/projects/cpc-fa.webp" alt="کاتالوگ صنعتی CPC بادران پنوماتیک، با نمای داخل یک عملگر ربع‌گرد"></picture></a>
+<a href="https://github.com/mamadalili/boomerang-commerce-os"><picture><source media="(max-width: 1140px)" srcset="https://raw.githubusercontent.com/mamadalili/mamadalili/main/assets/projects/commerce-os-fa-wide.webp"><img src="https://raw.githubusercontent.com/mamadalili/mamadalili/main/assets/projects/commerce-os-fa.webp" alt="استودیوی اطلاعات محصول بومرنگ؛ دو فایل برای یک کالا، با موجودی ۱۲ و ۹ عدد"></picture></a>
 </p>
 
 - در **بومرنگ**، خریدار شیر آکوا را در کاتالوگ پیدا می‌کند و برای تعداد موردنیازش قیمت می‌گیرد. [کد کاتالوگ چهارزبانه](https://github.com/mamadalili/boomerang-co)
@@ -26,6 +29,8 @@
 - در **سایت شخصی‌ام**، روایت‌های کاری و مقاله‌های تعاملی می‌نویسم. در یکی از تمرین‌ها می‌توانی سفارش‌های یک تعمیرگاه را هفته‌به‌هفته با بازدیدهای سایتش مقایسه کنی. [کد سایت شخصی](https://github.com/mamadalili/personal-web)
 - در **آنلاین تحریر**، فروش اینترنتی نوشت‌افزار را راه انداختم و تیم محتوا و پشتیبانی فروش را مدیریت کردم. [روایت فروش در سایت و بازارگاه‌ها](https://mrdalili.ir/reading/fa/turbin-marketplaces.html)
 - در **بومرنگ کالا**، فروش اینترنتی روشویی و شیرآلات را برای بازار ایران راه انداختم. روی صفحهٔ محصول باید معلوم می‌شد چه قطعاتی همراه هر ست است. [روایت راه‌اندازی فروشگاه](https://mrdalili.ir/reading/fa/boomerang-online-sales.html)
+- در **کاتالوگ صنعتی CPC بادران پنوماتیک**، می‌توانی از روی کاری که تجهیز انجام می‌دهد سراغ دستهٔ محصول بروی. مثلاً برای چرخاندن محور شیر به اندازهٔ ۹۰ درجه، [قالب عملگر ربع‌گرد](https://github.com/mamadalili/cpc-final-draft/blob/main/type-category-quarter-turn-actuator.html) را ببین.
+- در **استودیوی اطلاعات محصول بومرنگ (Commerce OS)**، هر نسخه از فایل موجودی نگه داشته می‌شود. در نمونهٔ پروژه می‌بینی که موجودی ۱۲ عدد را فایل اول گزارش کرده و ۹ عدد را فایل بعدی. [دو فایل نمونه](https://github.com/mamadalili/boomerang-commerce-os/tree/main/docs/examples)
 
 ## از پشتیبانی اینترنت تا فروش آنلاین
 
