@@ -14,11 +14,18 @@
 <a href="https://www.boomerang-co.com/fa/products/aqua-kitchen/"><picture><source media="(max-width: 1140px)" srcset="https://raw.githubusercontent.com/mamadalili/mamadalili/main/assets/projects/boomerang-fa-wide.webp"><img src="https://raw.githubusercontent.com/mamadalili/mamadalili/main/assets/projects/boomerang-fa.webp" alt="شیر آکوا در کاتالوگ چهارزبانهٔ بومرنگ"></picture></a>
 <a href="https://github.com/mamadalili/tina-nail-atelier"><picture><source media="(max-width: 1140px)" srcset="https://raw.githubusercontent.com/mamadalili/mamadalili/main/assets/projects/tina-fa-wide.webp"><img src="https://raw.githubusercontent.com/mamadalili/mamadalili/main/assets/projects/tina-fa.webp" alt="پروژهٔ رزرو وقت آتلیهٔ ناخن تینا"></picture></a>
 <a href="https://mamadalili.github.io/aein-tahvie-industrial-trading-group/#/product/tfrcd"><picture><source media="(max-width: 1140px)" srcset="https://raw.githubusercontent.com/mamadalili/mamadalili/main/assets/projects/aein-fa-wide.webp"><img src="https://raw.githubusercontent.com/mamadalili/mamadalili/main/assets/projects/aein-fa.webp" alt="دریچهٔ سقفی گرد TFRCD در کاتالوگ آئین تهویه"></picture></a>
+<br>
+<a href="https://mrdalili.ir/?lang=fa"><picture><source media="(max-width: 1140px)" srcset="https://raw.githubusercontent.com/mamadalili/mamadalili/main/assets/projects/personal-fa-wide.webp"><img src="https://raw.githubusercontent.com/mamadalili/mamadalili/main/assets/projects/personal-fa.webp" alt="سایت شخصی محمدرضا دلیلی با طرح مرکب صفحهٔ اصلی"></picture></a>
+<a href="https://onlinetahrir.com/"><picture><source media="(max-width: 1140px)" srcset="https://raw.githubusercontent.com/mamadalili/mamadalili/main/assets/projects/tahrir-fa-wide.webp"><img src="https://raw.githubusercontent.com/mamadalili/mamadalili/main/assets/projects/tahrir-fa.webp" alt="فروشگاه آنلاین تحریر با عکس دفتر سیمی کرفت"></picture></a>
+<a href="https://boomerangkala.com/"><picture><source media="(max-width: 1140px)" srcset="https://raw.githubusercontent.com/mamadalili/mamadalili/main/assets/projects/kala-fa-wide.webp"><img src="https://raw.githubusercontent.com/mamadalili/mamadalili/main/assets/projects/kala-fa.webp" alt="بومرنگ کالا، فروشگاه روشویی و شیرآلات در ایران؛ مدل پیتو"></picture></a>
 </p>
 
 - در **بومرنگ**، خریدار شیر آکوا را در کاتالوگ پیدا می‌کند و برای تعداد موردنیازش قیمت می‌گیرد. [کد کاتالوگ چهارزبانه](https://github.com/mamadalili/boomerang-co)
 - در **آتلیهٔ تینا**، هر متخصص تقویم خودش را دارد. مهمان اسم متخصص را انتخاب می‌کند و ساعت‌های آزاد همان نفر را می‌بیند. [کد تقویم شمسی](https://github.com/mamadalili/tina-nail-atelier/blob/main/src/features/booking/JalaliCalendar.tsx)
 - در **آئین تهویه**، خریدار از روی کد دریچهٔ سقفی TFRCD مستقیم به صفحهٔ ۴ دفترچهٔ فنی می‌رسد. [داده‌های محصول و شمارهٔ صفحه](https://github.com/mamadalili/aein-tahvie-industrial-trading-group/blob/main/data.js)
+- در **سایت شخصی‌ام**، روایت‌های کاری و مقاله‌های تعاملی می‌نویسم. در یکی از تمرین‌ها می‌توانی سفارش‌های یک تعمیرگاه را هفته‌به‌هفته با بازدیدهای سایتش مقایسه کنی. [کد سایت شخصی](https://github.com/mamadalili/personal-web)
+- در **آنلاین تحریر**، فروش اینترنتی نوشت‌افزار را راه انداختم و تیم محتوا و پشتیبانی فروش را مدیریت کردم. [روایت فروش در سایت و بازارگاه‌ها](https://mrdalili.ir/reading/fa/turbin-marketplaces.html)
+- در **بومرنگ کالا**، فروش اینترنتی روشویی و شیرآلات را برای بازار ایران راه انداختم. روی صفحهٔ محصول باید معلوم می‌شد چه قطعاتی همراه هر ست است. [روایت راه‌اندازی فروشگاه](https://mrdalili.ir/reading/fa/boomerang-online-sales.html)
 
 ## از پشتیبانی اینترنت تا فروش آنلاین
 
